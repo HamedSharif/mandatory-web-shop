@@ -43,33 +43,32 @@
 
 <h3>Checkout</h3>
 
-<form id="theForm" action="index.html" method="get" onsubmit="return validateForm()">
+<form id="theForm" action="checkout.html" method="get" onsubmit="return (validateForm())">
 
 
     <label for="firstname">First name</label><br>
     <input type="text" id="firstname" name="first name" placeholder="Enter your name..." title=" format is A-Z, no numbers and more than three letters."
-           pattern="[A-Za-z\såöä]{3,}">
+    >
     <br>
     <label for="lastname">Last name</label><br>
     <input type="text" id="lastname"  name="last name" placeholder="Enter last name" title=" format is A-Z, no numbers and more than three letters."
-           pattern="[A-Za-z\såöä]{3,}">
+    >
     <br>
     <label for="email">Email</label><br>
-    <input type="email" id="email" title="You have to include '@' in your email-adress." placeholder="Enter your email..." name="email" >
+    <input type="text" id="email" title="You have to include '@' in your email-adress." placeholder="Enter your email..." name="email" >
     <br>
     <label for="phone">Phone number</label><br>
-    <input type="text" id="phone" pattern="^[\d]{9,}" placeholder="Enter nombers, no other sign ..."  >
+    <input type="text" id="phone"  placeholder="Enter nombers, no other sign ..."  >
     <br>
     <label for="streetaddress">Street address</label><br>
     <input type="text" id="streetaddress" title="Street adress" placeholder="Enter street nomber...">
     <br>
     <Label>ZIP Code</Label><br>
-    <input type="text"  title="Five digit zip code" placeholder="Enter your ZIP ..." pattern="[0-9]{5}"/>
+    <input type="text"  id="zip" title="Five digit zip code" placeholder="Enter your ZIP ..." />
     <br>
     <label for="city">City</label><br>
     <select  id="city">
         <option value="" disabled selected>Choose city</option>
-        <option value="">Helsingborg</option>
         <option value="Hgn">Höganäs</option>
         <option value="Lerberget">Lerberget</option>
     </select>
@@ -86,21 +85,51 @@
 
 
 <script>
-    function validateForm() {
+
+    let submit  = document.getElementById("submit")
+
+    submit.addEventListener('click', function validateForm() {
+
 
         let form = document.getElementById("theForm")
 
         for (let i = 0; i < form.length; i++) {
-            let x = form.elements[i].value;
 
+            let x = form.elements[i].value;
+            let email = document.getElementById("email");
+            let myEmail = email.value
+            myEmail = myEmail.trim();
+            let phoneNomber = document.getElementById("phone");
+            let myPhoneNumber = phoneNomber.value;
+            let zip = document.getElementById("zip");
+            let myZip = zip.value;
 
             if ( x === "" ) {
                 alert("fields must be filled out");
+                return false
+            }else if
+            (!myEmail.match(/^.+@.+$/)){
+                alert("please enter a valid email");
+                return false;
+            }else if (!myPhoneNumber.match(/\d/)) {
+                alert("Please enter valid phone nomber");
                 return false;
 
+
+            }else if (!myZip.match(/\d/)) {
+                alert("Please enter ZIP");
+                return false;
+
+
             }
+            else {
+                alert("Thank you for your booking :) ");
+                return false
+            }
+
         }
-    }
+
+    })
 </script>
 
 
