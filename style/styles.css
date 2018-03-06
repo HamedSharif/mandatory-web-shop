@@ -1,0 +1,40 @@
+body{
+    margin: 40px;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: #999999;
+    text-align: center;
+    margin-top: 5em;
+    padding: 3em;
+}
+
+
+h3{
+
+    font-weight: bold;
+}
+
+
+
+body,form,textarea,label,input,option,select{
+    background-color: #999999;
+    text-align: left;
+    padding: 0.3em;
+    box-sizing:content-box;
+
+}
+textarea,input,option,select{
+    border: solid 1px white ;
+    margin-bottom: 1em;
+}
+
+#submit,input:hover{
+    background-color: #ce8483;
+}
+

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Hamed Sharif">
+    <meta name="viewport" content="width-device-width, initial-scale=1,0">
+    <link rel="stylesheet" href="../style/styles.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Checkout</title>
+
+</head>
+<body >
+<script>
+    let home =  "  <button  type=\"button\" class=\"btn\"><a href='../views/products.html' >home</a></button>\n";
+    document.write(home)
+
+</script>
+
+            <h3>Checkout</h3>
+
+            <form id="theForm" action="checkout.html" method="get" onsubmit="return (validateForm())">
+
+
+                <label for="firstname">First name</label><br>
+                <input type="text" id="firstname" name="first name" placeholder="Enter your name..." title=" format is A-Z, no numbers and more than three letters."
+                       >
+                <br>
+                <label for="lastname">Last name</label><br>
+                <input type="text" id="lastname"  name="last name" placeholder="Enter last name" title=" format is A-Z, no numbers and more than three letters."
+                       >
+                <br>
+                <label for="email">Email</label><br>
+                <input type="text" id="email" title="You have to include '@' in your email-adress." placeholder="Enter your email..." name="email" >
+                <br>
+                <label for="phone">Phone number</label><br>
+                <input type="text" id="phone"  placeholder="Enter nombers, no other sign ..."  >
+                <br>
+                <label for="streetaddress">Street address</label><br>
+                <input type="text" id="streetaddress" title="Street adress" placeholder="Enter street nomber...">
+                <br>
+                <Label>ZIP Code</Label><br>
+                <input type="text"  id="zip" title="Five digit zip code" placeholder="Enter your ZIP ..." />
+                <br>
+                <label for="city">City</label><br>
+                <select  id="city">
+                    <option value="" disabled selected>Choose city</option>
+                    <option value="Hgn">Höganäs</option>
+                    <option value="Lerberget">Lerberget</option>
+                </select>
+                <br>
+            </form>
+            <Label for="comments">Comments <span style="font-size: x-small">(Optional)</span></Label>
+            <br>
+            <textarea name="comments" autocomplete="off" id="comments" cols="30" rows="10" placeholder="Enter ur comment ..."></textarea>
+
+
+            <br>
+            <input type="submit" form="theForm" id="submit"   name="submit" value="Submit">
+
+
+
+            <script src="../script/checkout.js"></script>
+
+
+
+
+
+
+
+</body>
+</html>
